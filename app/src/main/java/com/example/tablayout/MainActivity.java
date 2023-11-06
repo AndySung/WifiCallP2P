@@ -1,10 +1,15 @@
 package com.example.tablayout;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.ImageButton;
+import android.widget.Toolbar;
 
 import com.example.tablayout.Fragments.ContactFragment;
 import com.example.tablayout.Fragments.HomeFragment;
@@ -22,16 +27,21 @@ public class MainActivity extends FragmentActivity implements BottomTabBar.OnSel
     private RecentCallFragment recentCallFragment ;
     private ContactFragment contactFragment ;
     private FragmentManager manager ;
+
+    //设置按钮
+    private ImageButton action_setting;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getWindow().setStatusBarColor(getColor(R.color.bg_color));
         initView();
     }
 
     private void initView() {
         manager = getSupportFragmentManager();
-        tb = (BottomTabBar) findViewById(R.id.tb);
+        tb = findViewById(R.id.tb);
+        action_setting = findViewById(R.id.setting_icon);
         bars = new ArrayList<>();
         bars.add(new BarEntity("首页",R.mipmap.home_icon_select,R.mipmap.home_icon_unselect));
         bars.add(new BarEntity("最近联系",R.mipmap.recent_icon_select,R.mipmap.recent_icon_unselect));
@@ -64,5 +74,16 @@ public class MainActivity extends FragmentActivity implements BottomTabBar.OnSel
             default:
                 break;
         }
+    }
+
+
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId() == R.id.action_setting){
+            //todo
+            return false;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

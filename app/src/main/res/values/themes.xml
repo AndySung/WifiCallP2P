@@ -5,5 +5,8 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="Theme.TabLayout" parent="Base.Theme.TabLayout" />
+    <style name="Theme.TabLayout" parent="Base.Theme.TabLayout" >
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        <item name="android:statusBarColor">@color/design_default_color_primary</item>
+    </style>
 </resources>
