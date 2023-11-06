@@ -5,7 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import androidx.annotation.Nullable;
+import org.jetbrains.annotations.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.tablayout.R;
