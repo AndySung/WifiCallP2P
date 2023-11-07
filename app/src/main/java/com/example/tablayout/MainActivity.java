@@ -12,6 +12,7 @@ import android.widget.ImageButton;
 import android.widget.Toolbar;
 
 import com.example.tablayout.Fragments.ContactFragment;
+import com.example.tablayout.Fragments.DialerFragment;
 import com.example.tablayout.Fragments.HomeFragment;
 import com.example.tablayout.Fragments.RecentCallFragment;
 import com.example.tablayout.tab.BarEntity;
@@ -24,12 +25,10 @@ public class MainActivity extends FragmentActivity implements BottomTabBar.OnSel
     private BottomTabBar tb ;
     private List<BarEntity> bars ;
     private HomeFragment homeFragment ;
-    private RecentCallFragment recentCallFragment ;
+    private DialerFragment recentCallFragment ;
     private ContactFragment contactFragment ;
     private FragmentManager manager ;
 
-    //设置按钮
-    private ImageButton action_setting;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +40,6 @@ public class MainActivity extends FragmentActivity implements BottomTabBar.OnSel
     private void initView() {
         manager = getSupportFragmentManager();
         tb = findViewById(R.id.tb);
-        action_setting = findViewById(R.id.setting_icon);
         bars = new ArrayList<>();
         bars.add(new BarEntity("首页",R.mipmap.home_icon_select,R.mipmap.home_icon_unselect));
         bars.add(new BarEntity("最近联系",R.mipmap.recent_icon_select,R.mipmap.recent_icon_unselect));
@@ -61,7 +59,7 @@ public class MainActivity extends FragmentActivity implements BottomTabBar.OnSel
                 break;
             case 1:
                 if (recentCallFragment==null){
-                    recentCallFragment = new RecentCallFragment();
+                    recentCallFragment = new DialerFragment();
                 }
                 tb.switchContent(recentCallFragment);
                 break;

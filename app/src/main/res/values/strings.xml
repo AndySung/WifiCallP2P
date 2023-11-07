@@ -1,3 +1,48 @@
 <resources>
     <string name="app_name">WifiCallP2P</string>
+
+    <string name="dialer">拨号</string>
+    <string name="recent_call_log">最近通话</string>
+    <string name="no_call_log">暂无通话记录，请确保已允许读取通话记录权限\n如已允许，点击重新加载</string>
+
+    <!-- 添加联系人 -->
+    <string-array name="action_type">
+        <item>新联系人</item>
+        <item>已有联系人</item>
+    </string-array>
+    <string-array name="number_type">
+        <item>自定义</item>
+        <item>住宅</item>
+        <item>手机</item>
+        <item>公司</item>
+        <item>传真</item>
+        <item>其他</item>
+        <item>其他</item>
+        <item>其他</item>
+    </string-array>
+    <!-- 通话详情 -->
+    <string name="call_detail">通话详情</string>
+    <string name="duration_hms_format">%1$s时%2$s分%3$s秒</string>
+    <string name="duration_ms_format">%1$s分%2$s秒</string>
+    <string name="call_outgoing">呼出</string>
+    <string name="call_incoming">呼入</string>
+    <string name="call_missed">未接</string>
+    <string name="call_rejected">拒接</string>
+    <string name="number_type_home">住宅</string>
+    <string name="number_type_mobile">手机</string>
+    <string name="number_type_work">公司</string>
+    <string name="number_type_fax">传真</string>
+    <string name="number_type_other">其他</string>
+    <string name="number_type_self">自定义</string>
+    <string name="ok">确定</string>
+    <string name="call_ip_num">拨打IP号码</string>
+    <string name="clean_call_log_title">清除通话记录</string>
+    <string name="clean_log_remind">清除通话记录？</string>
+    <string name="cancel_text">取消</string>
+    <string name="ok_text">确定</string>
+    <string name="send_sms">发送短信</string>
+    <string name="add_contact">加至新联系人</string>
+    <string name="add_to_exist">加至已有联系人</string>
+    <string name="edit_contact">编辑联系人</string>
+    <string name="search_num">在线查询号码</string>
 </resources>
