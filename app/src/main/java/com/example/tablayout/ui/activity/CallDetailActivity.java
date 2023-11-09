@@ -418,6 +418,7 @@ public class CallDetailActivity extends BaseActivity {
 									ContentResolver resolver = getContentResolver();
 									if (logcursor.moveToFirst()) {
 										do {
+											@SuppressLint("Range")
 											int id = logcursor.getInt(logcursor
 													.getColumnIndex(CallLog.Calls._ID));
 											resolver.delete(

@@ -1,20 +1,15 @@
 package com.example.tablayout;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.FragmentActivity;
-import androidx.fragment.app.FragmentManager;
-
 import android.os.Bundle;
-import android.view.Menu;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.view.MenuItem;
-import android.widget.ImageButton;
-import android.widget.Toolbar;
 
-import com.example.tablayout.Fragments.ContactFragment;
 import com.example.tablayout.Fragments.DialerFragment;
 import com.example.tablayout.Fragments.HomeFragment;
-import com.example.tablayout.Fragments.RecentCallFragment;
+import com.example.tablayout.Fragments.SettingFragment;
 import com.example.tablayout.tab.BarEntity;
 import com.example.tablayout.tab.BottomTabBar;
 
@@ -26,7 +21,7 @@ public class MainActivity extends FragmentActivity implements BottomTabBar.OnSel
     private List<BarEntity> bars ;
     private HomeFragment homeFragment ;
     private DialerFragment recentCallFragment ;
-    private ContactFragment contactFragment ;
+    private SettingFragment settingFragment ;
     private FragmentManager manager ;
 
     @Override
@@ -41,9 +36,9 @@ public class MainActivity extends FragmentActivity implements BottomTabBar.OnSel
         manager = getSupportFragmentManager();
         tb = findViewById(R.id.tb);
         bars = new ArrayList<>();
-        bars.add(new BarEntity("首页",R.mipmap.home_icon_select,R.mipmap.home_icon_unselect));
-        bars.add(new BarEntity("最近联系",R.mipmap.recent_icon_select,R.mipmap.recent_icon_unselect));
-        bars.add(new BarEntity("联系人",R.mipmap.contact_icon_select,R.mipmap.contact_icon_unselect));
+        bars.add(new BarEntity("最近联系",R.mipmap.home_icon_select,R.mipmap.home_icon_unselect));
+        bars.add(new BarEntity("VIOP",R.mipmap.voip_call_icon_select,R.mipmap.voip_call_icon_unselect));
+        bars.add(new BarEntity("配置",R.mipmap.setting_icon_select,R.mipmap.setting_icon_unselect));
 
         tb.setManager(manager).setOnSelectListener(this).setBars(bars);
     }
@@ -64,10 +59,10 @@ public class MainActivity extends FragmentActivity implements BottomTabBar.OnSel
                 tb.switchContent(recentCallFragment);
                 break;
             case 2:
-                if (contactFragment==null){
-                    contactFragment = new ContactFragment();
+                if (settingFragment==null){
+                    settingFragment = new SettingFragment();
                 }
-                tb.switchContent(contactFragment);
+                tb.switchContent(settingFragment);
                 break;
             default:
                 break;

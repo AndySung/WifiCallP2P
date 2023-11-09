@@ -62,8 +62,7 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DialerFragment extends BaseFragment implements
-		OnLongClickListener {
+public class DialerFragment extends BaseFragment implements OnLongClickListener {
 	/** Tone音的长度，单位：milliseconds */
 	private static final int TONE_LENGTH_MS = 150;
 	/** 主音量的比例：以80%的主音量播放Tone音 */
