@@ -494,8 +494,8 @@
                 android:id="@+id/spam_call_layout"
                 android:layout_width="fill_parent"
                 android:layout_height="56dip"
-                android:layout_marginLeft="16dip"
-                android:layout_marginRight="16dip"
+                android:paddingLeft="16dip"
+                android:onClick="OnClickStngBtn"
                 android:background="@drawable/list_item_selector" >
 
                 <LinearLayout

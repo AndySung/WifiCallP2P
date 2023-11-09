@@ -11,7 +11,7 @@ import android.util.Log;
 import android.view.SurfaceView;
 import android.widget.Toast;
 
-import com.example.tablayout.ui.activity.ConfigVoIPActivity;
+import com.example.andrd_ado_vdo_tkbk_demo.activity.ConfigVoIPActivity;
 
 import HeavenTao.Data.*;
 import java.io.File;

@@ -42,7 +42,7 @@
 <!--        android:layout_marginBottom="100dp"-->
 <!--        android:src="@mipmap/icon_dialpad"/>-->
 
-    <com.example.tablayout.tab.BottomTabBar
+    <com.example.andrd_ado_vdo_tkbk_demo.tab.BottomTabBar
         android:id="@+id/tb"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

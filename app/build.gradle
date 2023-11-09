@@ -7,7 +7,7 @@ android {
     buildToolsVersion = '34.0.0'
 
     defaultConfig {
-        applicationId "com.example.tablayout"
+        applicationId  "com.example.andrd_ado_vdo_tkbk_demo"
 
         //minSdkVersion 9
         minSdkVersion 24
@@ -22,7 +22,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    namespace 'com.example.tablayout'
+    namespace 'com.example.andrd_ado_vdo_tkbk_demo'
 //    namespace 'com.example.tablayout'
 //    compileSdk 33
 //
