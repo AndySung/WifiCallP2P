@@ -58,14 +58,19 @@ public class ConfigVoIPActivity extends AppCompatActivity implements View.OnTouc
 
     public String m_ExternalDirFullAbsPathStrPt; //存放扩展目录完整绝对路径字符串的指针。
 
-    public RelativeLayout spam_call_layout;  //更多设置
+    public RelativeLayout spam_call_layout;   // 更多设置
+
+    public LinearLayout LogLinearLyotId, LogLinear_title; //显示日志
+    public Button show_log_btn;
+
+    public boolean isShowLog;
 
     //Activity创建消息。
     @Override protected void onCreate( Bundle savedInstanceState )
     {
         super.onCreate( savedInstanceState );
         Log.i( m_CurClsNameStrPt, "onCreate" );
-
+        isShowLog = true;
         //创建布局。
         {
             LayoutInflater p_LyotInflater = LayoutInflater.from( this );
@@ -96,7 +101,25 @@ public class ConfigVoIPActivity extends AppCompatActivity implements View.OnTouc
         setContentView( m_MainLyotViewPt ); //设置主界面的内容为主布局。
         m_CurActivityLyotViewPt = m_MainLyotViewPt; //设置当前界面布局视图。
         ( ( Button )findViewById( R.id.PttBtnId ) ).setOnTouchListener( this ); //设置一键即按即通按钮的触摸监听器。
-
+        LogLinearLyotId = findViewById(R.id.LogLinearLyotId);   //log信息
+        LogLinear_title = findViewById(R.id.LogLinear_title);   //log标题和清空日志按钮
+        show_log_btn = findViewById(R.id.show_log_btn);         //显示按钮
+        show_log_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(isShowLog == true) {
+                    LogLinear_title.setVisibility(View.VISIBLE);
+                    LogLinearLyotId.setVisibility(View.VISIBLE);
+                    show_log_btn.setText("隐藏日志");
+                    isShowLog = false;
+                }else{
+                    LogLinear_title.setVisibility(View.GONE);
+                    LogLinearLyotId.setVisibility(View.GONE);
+                    show_log_btn.setText("显示日志");
+                    isShowLog = true;
+                }
+            }
+        });
         //请求权限。
         MediaPocsThrd.RqstPrmsn( this, 1, 1, 1, 1, 0, 1, 1, 1, 1 );
 
@@ -183,15 +206,14 @@ public class ConfigVoIPActivity extends AppCompatActivity implements View.OnTouc
         if( m_CurActivityLyotViewPt == m_MainLyotViewPt )
         {
             Log.i( m_CurClsNameStrPt, "用户在主界面按下返回键，本软件退出。" );
-//            if( m_MyMediaPocsThrdPt != null )
-//            {
-//                Log.i( m_CurClsNameStrPt, "开始请求并等待媒体处理线程退出。" );
-//                m_MyMediaPocsThrdPt.m_IsInterrupt = 1;
-//                m_MyMediaPocsThrdPt.RqirExit( 1, 1 );
-//                Log.i( m_CurClsNameStrPt, "结束请求并等待媒体处理线程退出。" );
-//            }
-            finish();
-//            System.exit(0);
+            if( m_MyMediaPocsThrdPt != null )
+            {
+                Log.i( m_CurClsNameStrPt, "开始请求并等待媒体处理线程退出。" );
+                m_MyMediaPocsThrdPt.m_IsInterrupt = 1;
+                m_MyMediaPocsThrdPt.RqirExit( 1, 1 );
+                Log.i( m_CurClsNameStrPt, "结束请求并等待媒体处理线程退出。" );
+            }
+            System.exit(0);
         }
         else if( m_CurActivityLyotViewPt == m_XfrPrtclStngLyotViewPt )
         {

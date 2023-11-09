@@ -23,7 +23,7 @@
         android:theme="@style/Theme.TabLayout"
         tools:targetApi="31">
         <activity
-            android:name="com.example.andrd_ado_vdo_tkbk_demo.MainActivity"
+            android:name="com.example.andrd_ado_vdo_tkbk_demo.activity.ConfigVoIPActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,7 +33,7 @@
         </activity>
 
         <service android:name="com.example.andrd_ado_vdo_tkbk_demo.voip.FrgndSrvc" android:exported ="false" />
-        <activity android:name="com.example.andrd_ado_vdo_tkbk_demo.activity.ConfigVoIPActivity"/>
+        <activity android:name="com.example.andrd_ado_vdo_tkbk_demo.MainActivity"/>
         <activity android:name="com.example.andrd_ado_vdo_tkbk_demo.activity.CallDetailActivity"/>
     </application>
 

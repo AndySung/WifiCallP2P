@@ -5,27 +5,53 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-    <Toolbar
-        android:id="@+id/toolbar"
-        android:layout_alignParentStart="true"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="@color/bg_color"
-        android:fitsSystemWindows="true"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-        <!--自定义控件-->
-        <TextView
-            android:id="@+id/toolbar_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:textColor="@color/font_color"
-            android:text="VOIP配置"
-            android:textSize="20dp"/>
-    </Toolbar>
+<!--    <Toolbar-->
+<!--        android:id="@+id/toolbar"-->
+<!--        android:layout_alignParentStart="true"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="60dp"-->
+<!--        android:background="@color/bg_color"-->
+<!--        android:fitsSystemWindows="true"-->
+<!--        android:minHeight="?attr/actionBarSize"-->
+<!--        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">-->
+<!--        &lt;!&ndash;自定义控件&ndash;&gt;-->
+<!--        <TextView-->
+<!--            android:id="@+id/toolbar_title"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_centerInParent="true"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:gravity="center"-->
+<!--            android:textColor="@color/font_color"-->
+<!--            android:text="VOIP配置"-->
+<!--            android:textSize="20dp"/>-->
+<!--    </Toolbar>-->
+    <RelativeLayout   android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/toolbar">
+            <Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@color/bg_color"
+                android:fitsSystemWindows="true"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+                <!--自定义控件-->
+                <TextView
+                    android:id="@+id/toolbar_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textColor="@color/font_color"
+                    android:text="Wifi通話"
+                    android:textSize="20dp"/>
+
+                <Button android:id="@+id/show_log_btn" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="显示日志" android:layout_gravity="right" android:background="#00000000"
+                    android:textColor="@color/font_color" android:layout_margin="10dp" />
+            </Toolbar>
+        </RelativeLayout>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -175,6 +201,9 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:hint="请输入IP地址或者域名"
+                        android:cursorVisible="true"
+                        android:inputType="number"
+                        android:digits="0123456789."
                         android:singleLine="true" />
 
                     <Spinner
@@ -212,6 +241,8 @@
                     android:layout_weight="7"
                     android:layout_marginRight="10dp"
                     android:hint="请输入端口号"
+                    android:inputType="number"
+                    android:digits="0123456789"
                     android:singleLine="true" />
             </LinearLayout>
 
@@ -242,7 +273,7 @@
                 android:layout_height="wrap_content" >
 
                 <TextView
-                    android:text="对讲模式："
+                    android:text="通話模式："
                     android:layout_width="0dp"
                     android:layout_weight="3"
                     android:layout_height="match_parent"
@@ -531,9 +562,11 @@
                 android:background="@color/blue" />
 
             <!--读取设置按钮、重置设置按钮、删除设置按钮、保存设置按钮-->
+            <!--查看设置需要将这个LinerLayout 的visibility设置为visible-->
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_marginTop="20dp"
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" >
 
@@ -645,7 +678,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="11"
                     android:padding="0dp"
-                    android:text="连接服务端"
+                    android:text="拨打电话"
                     android:id="@+id/CnctSrvrBtnId"
                     android:onClick="OnClickCreateSrvrAndCnctSrvrBtn" />
 
@@ -837,11 +870,13 @@
 
             <!--显示日志-->
             <LinearLayout
+                android:id="@+id/LogLinear_title"
                 android:orientation="horizontal"
                 android:layout_marginLeft="18dp"
                 android:layout_marginRight="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content"
+                android:visibility="gone">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -865,7 +900,8 @@
                 android:id="@+id/LogLinearLyotId"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content"
+                android:visibility="gone">
 
             </LinearLayout>
 

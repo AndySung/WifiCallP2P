@@ -1028,7 +1028,7 @@ public class MyMediaPocsThrd extends MediaPocsThrd
                 }
             }
 
-            String p_InfoStrPt = "中断对讲。";
+            String p_InfoStrPt = "中断通话。";
             if( m_IsPrintLogcat != 0 ) Log.i( m_CurClsNameStrPt, p_InfoStrPt );
             Message p_MessagePt = new Message();p_MessagePt.what = ConfigActivityHandler.Msg.ShowLog.ordinal();p_MessagePt.obj = p_InfoStrPt;m_MainActivityHandlerPt.sendMessage( p_MessagePt );
             if( m_IsShowToast != 0 ) m_ShowToastActivityPt.runOnUiThread( new Runnable() { public void run() { Toast.makeText( m_ShowToastActivityPt, p_InfoStrPt, Toast.LENGTH_LONG ).show(); } } );

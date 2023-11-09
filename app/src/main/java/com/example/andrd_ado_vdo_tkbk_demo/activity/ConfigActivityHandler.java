@@ -51,7 +51,7 @@ public class ConfigActivityHandler extends Handler {
                     ((Button) m_MainActivityPt.findViewById(R.id.XfrPrtclStngBtnId)).setEnabled(false); //设置传输协议设置按钮为不可用。
                     ((EditText) m_MainActivityPt.findViewById(R.id.IPAddrEdTxtId)).setEnabled(false); //设置IP地址控件为不可用。
                     ((EditText) m_MainActivityPt.findViewById(R.id.PortEdTxtId)).setEnabled(false); //设置端口控件为不可用。
-                    ((Button) m_MainActivityPt.findViewById(R.id.CreateSrvrBtnId)).setText("中断"); //设置创建服务端按钮的内容为“中断”。
+                    ((Button) m_MainActivityPt.findViewById(R.id.CreateSrvrBtnId)).setText("挂断"); //设置创建服务端按钮的内容为“中断”。
                     ((Button) m_MainActivityPt.findViewById(R.id.CnctSrvrBtnId)).setEnabled(false); //设置连接服务端按钮为不可用。
                     ((Button) m_MainActivityPt.findViewById(R.id.StngBtnId)).setEnabled(false); //设置设置按钮为不可用。
                     ((Button) m_MainActivityPt.findViewById(R.id.SaveStngBtnId)).setEnabled(false); //设置保存设置按钮为不可用。
@@ -66,7 +66,7 @@ public class ConfigActivityHandler extends Handler {
                     ((EditText) m_MainActivityPt.findViewById(R.id.IPAddrEdTxtId)).setEnabled(false); //设置IP地址控件为不可用。
                     ((EditText) m_MainActivityPt.findViewById(R.id.PortEdTxtId)).setEnabled(false); //设置端口控件为不可用。
                     ((Button) m_MainActivityPt.findViewById(R.id.CreateSrvrBtnId)).setEnabled(false); //设置创建服务端按钮为不可用。
-                    ((Button) m_MainActivityPt.findViewById(R.id.CnctSrvrBtnId)).setText("中断"); //设置连接服务端按钮的内容为“中断”。
+                    ((Button) m_MainActivityPt.findViewById(R.id.CnctSrvrBtnId)).setText("挂断"); //设置连接服务端按钮的内容为“中断”。
                     ((Button) m_MainActivityPt.findViewById(R.id.StngBtnId)).setEnabled(false); //设置设置按钮为不可用。
                     ((Button) m_MainActivityPt.findViewById(R.id.SaveStngBtnId)).setEnabled(false); //设置保存设置按钮为不可用。
                     ((Button) m_MainActivityPt.findViewById(R.id.ReadStngBtnId)).setEnabled(false); //设置读取设置按钮为不可用。
