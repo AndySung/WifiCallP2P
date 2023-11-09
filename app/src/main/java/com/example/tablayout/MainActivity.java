@@ -12,6 +12,7 @@ import com.example.tablayout.Fragments.HomeFragment;
 import com.example.tablayout.Fragments.SettingFragment;
 import com.example.tablayout.tab.BarEntity;
 import com.example.tablayout.tab.BottomTabBar;
+import com.example.tablayout.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +37,7 @@ public class MainActivity extends FragmentActivity implements BottomTabBar.OnSel
         manager = getSupportFragmentManager();
         tb = findViewById(R.id.tb);
         bars = new ArrayList<>();
-        bars.add(new BarEntity("最近联系",R.mipmap.home_icon_select,R.mipmap.home_icon_unselect));
+        bars.add(new BarEntity("最近联系", R.mipmap.home_icon_select,R.mipmap.home_icon_unselect));
         bars.add(new BarEntity("VIOP",R.mipmap.voip_call_icon_select,R.mipmap.voip_call_icon_unselect));
         bars.add(new BarEntity("配置",R.mipmap.setting_icon_select,R.mipmap.setting_icon_unselect));
 

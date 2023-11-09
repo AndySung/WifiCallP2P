@@ -1,21 +1,10 @@
 package com.example.tablayout.ui.activity;
 
-import android.app.AlertDialog;
-import android.content.BroadcastReceiver;
-import android.content.ComponentName;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.IntentFilter;
-import android.content.ServiceConnection;
 import android.content.res.Configuration;
-import android.media.AudioManager;
 import android.net.Uri;
 import android.os.Environment;
-import android.os.Handler;
-import android.os.IBinder;
 import android.os.Message;
-import android.os.Vibrator;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -32,14 +21,11 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 import java.io.File;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import com.example.tablayout.R;
 import com.example.tablayout.voip.AndrdAdoVdoTkbkStng;
-import com.example.tablayout.voip.FrgndSrvc;
 import com.example.tablayout.voip.MyMediaPocsThrd;
-import com.example.tablayout.voip.media.*;
+import com.example.tablayout.R;
 
+import HeavenTao.Media.*;
 //主界面。
 public class ConfigVoIPActivity extends AppCompatActivity implements View.OnTouchListener
 {

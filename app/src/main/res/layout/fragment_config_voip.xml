@@ -802,7 +802,7 @@
                         android:gravity="center"
                         android:text="视频输入预览" />
 
-                    <com.example.tablayout.voip.media.HTSurfaceView
+                    <HeavenTao.Media.HTSurfaceView
                         android:id="@+id/VdoInptPrvwSurfaceId"
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
@@ -823,7 +823,7 @@
                         android:gravity="center"
                         android:text="视频输出显示" />
 
-                    <com.example.tablayout.voip.media.HTSurfaceView
+                    <HeavenTao.Media.HTSurfaceView
                         android:id="@+id/VdoOtptDspySurfaceId"
                         android:layout_width="match_parent"
                         android:layout_height="100dp"

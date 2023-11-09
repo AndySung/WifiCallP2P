@@ -22,11 +22,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
-import com.example.tablayout.R;
 import com.example.tablayout.utils.BaseActivity;
 import com.example.tablayout.utils.Constant;
 import com.example.tablayout.utils.ContactsUtil;
+import com.example.tablayout.R;
 
 import java.util.Date;
 

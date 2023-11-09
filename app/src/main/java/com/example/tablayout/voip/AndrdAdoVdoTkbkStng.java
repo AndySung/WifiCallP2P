@@ -28,9 +28,8 @@ import java.util.Enumeration;
 import com.example.tablayout.R;
 import com.example.tablayout.ui.activity.ConfigActivityHandler;
 import com.example.tablayout.ui.activity.ConfigVoIPActivity;
-import com.example.tablayout.voip.data.*;
-import com.example.tablayout.voip.media.*;
-import com.example.tablayout.voip.TinyXml2.*;
+import HeavenTao.Data.*;
+import HeavenTao.TinyXml2.*;
 
 //主界面。
 public class AndrdAdoVdoTkbkStng

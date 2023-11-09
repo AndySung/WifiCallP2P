@@ -45,21 +45,17 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.example.tablayout.R;
 import com.example.tablayout.adapter.AddActionAdapter;
 import com.example.tablayout.adapter.CallLogEntity;
 import com.example.tablayout.adapter.CallLogListAdapter;
 import com.example.tablayout.adapter.ContactListAdapter;
-import com.example.tablayout.ui.activity.CallDetailActivity;
 import com.example.tablayout.utils.Constant;
-import com.example.tablayout.utils.ContactsApplication;
 import com.example.tablayout.utils.ContactsUtil;
 import com.example.tablayout.utils.SharedPrefsUtil;
 import com.example.tablayout.utils.SkinManager;
+import com.example.tablayout.R;
 
 import java.lang.reflect.Method;
-import java.util.ArrayList;
 import java.util.List;
 
 public class DialerFragment extends BaseFragment implements OnLongClickListener {

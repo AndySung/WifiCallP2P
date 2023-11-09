@@ -17,12 +17,10 @@ import android.widget.Filter;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.example.tablayout.R;
 import com.example.tablayout.utils.CommonUtils;
 import com.example.tablayout.utils.ContactEntity;
-import com.example.tablayout.utils.ContactsUtil;
 import com.example.tablayout.utils.IAdapterCallback;
+import com.example.tablayout.R;
 
 import java.io.InputStream;
 import java.util.ArrayList;

@@ -8,13 +8,10 @@ import android.widget.Toast;
 
 import com.example.tablayout.ui.activity.ConfigActivityHandler;
 import com.example.tablayout.ui.activity.ConfigVoIPActivity;
-import com.example.tablayout.voip.Sokt.AudpSokt;
-import com.example.tablayout.voip.Sokt.TcpClntSokt;
-import com.example.tablayout.voip.Sokt.TcpSrvrSokt;
-import com.example.tablayout.voip.data.HTInt;
-import com.example.tablayout.voip.data.HTLong;
-import com.example.tablayout.voip.data.HTString;
-import com.example.tablayout.voip.media.MediaPocsThrd;
+
+import HeavenTao.Media.*;
+import HeavenTao.Data.*;
+import HeavenTao.Sokt.*;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -80,7 +77,7 @@ public class MyMediaPocsThrd extends MediaPocsThrd
 
     public class AAjb //存放音频自适应抖动缓冲器。
     {
-        com.example.tablayout.voip.Ado.AAjb m_Pt; //存放指针。
+        HeavenTao.Ado.AAjb m_Pt; //存放指针。
         public int m_MinNeedBufFrmCnt; //存放最小需缓冲帧的数量，单位为个帧，取值区间为[1,2147483647]。
         public int m_MaxNeedBufFrmCnt; //最大需缓冲帧的数量，单位为个帧，取值区间为[1,2147483647]，必须大于等于最小需缓冲帧的数量。
         public int m_MaxCntuLostFrmCnt; //最大连续丢失帧的数量，单位为个帧，取值区间为[1,2147483647]，当连续丢失帧的数量超过最大时，认为是对方中途暂停发送。
@@ -89,7 +86,7 @@ public class MyMediaPocsThrd extends MediaPocsThrd
     public AAjb m_AAjbPt = new AAjb();
     public class VAjb //存放视频自适应抖动缓冲器。
     {
-        public com.example.tablayout.voip.Vdo.VAjb m_Pt; //存放指针。
+        public  HeavenTao.Vdo.VAjb m_Pt; //存放指针。
         public int m_MinNeedBufFrmCnt; //存放最小需缓冲帧数量，单位为个帧，必须大于0。
         public int m_MaxNeedBufFrmCnt; //存放最大需缓冲帧数量，单位为个帧，必须大于最小需缓冲数据帧的数量。
         public float m_AdaptSensitivity; //存放自适应灵敏度，灵敏度越大自适应计算当前需缓冲帧的数量越多，取值区间为[0.0,127.0]。
@@ -182,13 +179,19 @@ public class MyMediaPocsThrd extends MediaPocsThrd
 
                         String p_InfoStrPt = "初始化本端TCP协议服务端套接字[" + p_LclNodeAddrPt.m_Val + ":" + p_LclNodePortPt.m_Val + "]成功。";
                         if( m_IsPrintLogcat != 0 ) Log.i( m_CurClsNameStrPt, p_InfoStrPt );
-                        Message p_MessagePt = new Message();p_MessagePt.what = ConfigActivityHandler.Msg.ShowLog.ordinal();p_MessagePt.obj = p_InfoStrPt;m_MainActivityHandlerPt.sendMessage( p_MessagePt );
+                        Message p_MessagePt = new Message();
+                        p_MessagePt.what = ConfigActivityHandler.Msg.ShowLog.ordinal();
+                        p_MessagePt.obj = p_InfoStrPt;
+                        m_MainActivityHandlerPt.sendMessage( p_MessagePt );
                     }
                     else //如果初始化本端TCP协议服务端套接字失败。
                     {
                         String p_InfoStrPt = "初始化本端TCP协议服务端套接字[" + m_NtwkPt.m_IPAddrStrPt + ":" + m_NtwkPt.m_PortStrPt + "]失败。原因：" + m_ErrInfoVstrPt.GetStr();
                         if( m_IsPrintLogcat != 0 ) Log.e( m_CurClsNameStrPt, p_InfoStrPt );
-                        Message p_MessagePt = new Message();p_MessagePt.what = ConfigActivityHandler.Msg.ShowLog.ordinal();p_MessagePt.obj = p_InfoStrPt;m_MainActivityHandlerPt.sendMessage( p_MessagePt );
+                        Message p_MessagePt = new Message();
+                        p_MessagePt.what = ConfigActivityHandler.Msg.ShowLog.ordinal();
+                        p_MessagePt.obj = p_InfoStrPt;
+                        m_MainActivityHandlerPt.sendMessage( p_MessagePt );
                         break Out;
                     }
 
@@ -700,7 +703,7 @@ public class MyMediaPocsThrd extends MediaPocsThrd
                 case 1: //如果要使用自适应抖动缓冲器。
                 {
                     //初始化音频自适应抖动缓冲器。
-                    m_AAjbPt.m_Pt = new com.example.tablayout.voip.Ado.AAjb();
+                    m_AAjbPt.m_Pt = new HeavenTao.Ado.AAjb();
                     if( m_AAjbPt.m_Pt.Init( m_AdoOtptPt.m_SmplRate, m_AdoOtptPt.m_FrmLenUnit, 1, 1, 0, m_AAjbPt.m_MinNeedBufFrmCnt, m_AAjbPt.m_MaxNeedBufFrmCnt, m_AAjbPt.m_MaxCntuLostFrmCnt, m_AAjbPt.m_AdaptSensitivity, ( m_NtwkPt.m_XfrMode == 0 ) ? 0 : 1, m_ErrInfoVstrPt ) == 0 )
                     {
                         if( m_IsPrintLogcat != 0 ) Log.i( m_CurClsNameStrPt, "初始化音频自适应抖动缓冲器成功。" );
@@ -714,7 +717,7 @@ public class MyMediaPocsThrd extends MediaPocsThrd
                     }
 
                     //初始化视频自适应抖动缓冲器。
-                    m_VAjbPt.m_Pt = new com.example.tablayout.voip.Vdo.VAjb();
+                    m_VAjbPt.m_Pt = new HeavenTao.Vdo.VAjb();
                     if( m_VAjbPt.m_Pt.Init( 1, m_VAjbPt.m_MinNeedBufFrmCnt, m_VAjbPt.m_MaxNeedBufFrmCnt, m_VAjbPt.m_AdaptSensitivity, m_ErrInfoVstrPt ) == 0 )
                     {
                         if( m_IsPrintLogcat != 0 ) Log.i( m_CurClsNameStrPt, "初始化视频自适应抖动缓冲器成功。" );

@@ -8,8 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
-import com.example.tablayout.R;
 import com.example.tablayout.ui.activity.ConfigVoIPActivity;
+import com.example.tablayout.R;
 
 public class SettingFragment extends Fragment {
     private RelativeLayout config_voip_layout;

@@ -16,9 +16,8 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
-
-import com.example.tablayout.R;
 import com.example.tablayout.voip.FrgndSrvc;
+import com.example.tablayout.R;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
