@@ -10,11 +10,14 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
 import android.os.Vibrator;
+import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
+import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.example.andrd_ado_vdo_tkbk_demo.R;
@@ -58,6 +61,11 @@ public class ConfigActivityHandler extends Handler {
                     ((Button) m_MainActivityPt.findViewById(R.id.ReadStngBtnId)).setEnabled(false); //设置读取设置按钮为不可用。
                     ((Button) m_MainActivityPt.findViewById(R.id.DelStngBtnId)).setEnabled(false); //设置删除设置按钮为不可用。
                     ((Button) m_MainActivityPt.findViewById(R.id.ResetStngBtnId)).setEnabled(false); //设置重置设置按钮为不可用。
+
+                    /*((RelativeLayout) m_MainActivityPt.findViewById(R.id.calling_view)).setVisibility(View.GONE);
+                    ((ScrollView) m_MainActivityPt.findViewById(R.id.scrollview_layout)).setVisibility(View.VISIBLE);
+                    ((RelativeLayout) m_MainActivityPt.findViewById(R.id.toolbar)).setVisibility(View.VISIBLE);*/
+
                 } else //如果是创建客户端。
                 {
                     ((RadioButton) m_MainActivityPt.findViewById(R.id.UseTcpPrtclRdBtnId)).setEnabled(false); //设置TCP协议按钮为不可用。
@@ -72,6 +80,10 @@ public class ConfigActivityHandler extends Handler {
                     ((Button) m_MainActivityPt.findViewById(R.id.ReadStngBtnId)).setEnabled(false); //设置读取设置按钮为不可用。
                     ((Button) m_MainActivityPt.findViewById(R.id.DelStngBtnId)).setEnabled(false); //设置删除设置按钮为不可用。
                     ((Button) m_MainActivityPt.findViewById(R.id.ResetStngBtnId)).setEnabled(false); //设置重置设置按钮为不可用。
+
+                    /*((RelativeLayout) m_MainActivityPt.findViewById(R.id.calling_view)).setVisibility(View.VISIBLE);
+                    ((ScrollView) m_MainActivityPt.findViewById(R.id.scrollview_layout)).setVisibility(View.GONE);
+                    ((RelativeLayout) m_MainActivityPt.findViewById(R.id.toolbar)).setVisibility(View.GONE);*/
                 }
 
                 //创建并绑定前台服务，从而确保本进程在转入后台或系统锁屏时不会被系统限制运行，且只能放在主线程中执行，因为要使用界面。
@@ -110,13 +122,16 @@ public class ConfigActivityHandler extends Handler {
                 ((EditText) m_MainActivityPt.findViewById(R.id.PortEdTxtId)).setEnabled(true); //设置端口控件为可用。
                 ((Button) m_MainActivityPt.findViewById(R.id.CreateSrvrBtnId)).setText("创建服务端"); //设置创建服务端按钮的内容为“创建服务端”。
                 ((Button) m_MainActivityPt.findViewById(R.id.CnctSrvrBtnId)).setEnabled(true); //设置连接服务端按钮为可用。
-                ((Button) m_MainActivityPt.findViewById(R.id.CnctSrvrBtnId)).setText("连接服务端"); //设置连接服务端按钮的内容为“连接服务端”。
+                ((Button) m_MainActivityPt.findViewById(R.id.CnctSrvrBtnId)).setText("拨打电话"); //设置连接服务端按钮的内容为“连接服务端”。
                 ((Button) m_MainActivityPt.findViewById(R.id.CreateSrvrBtnId)).setEnabled(true); //设置创建服务端按钮为可用。
                 ((Button) m_MainActivityPt.findViewById(R.id.StngBtnId)).setEnabled(true); //设置设置按钮为可用。
                 ((Button) m_MainActivityPt.findViewById(R.id.SaveStngBtnId)).setEnabled(true); //设置保存设置按钮为可用。
                 ((Button) m_MainActivityPt.findViewById(R.id.ReadStngBtnId)).setEnabled(true); //设置读取设置按钮为可用。
                 ((Button) m_MainActivityPt.findViewById(R.id.DelStngBtnId)).setEnabled(true); //设置删除设置按钮为可用。
                 ((Button) m_MainActivityPt.findViewById(R.id.ResetStngBtnId)).setEnabled(true); //设置重置设置按钮为可用。
+                /*((RelativeLayout) m_MainActivityPt.findViewById(R.id.calling_view)).setVisibility(View.GONE);
+                ((ScrollView) m_MainActivityPt.findViewById(R.id.scrollview_layout)).setVisibility(View.VISIBLE);
+                ((RelativeLayout) m_MainActivityPt.findViewById(R.id.toolbar)).setVisibility(View.VISIBLE);*/
                 break;
             }
             case PttBtnInit: {

@@ -45,4 +45,9 @@
     <string name="add_to_exist">加至已有联系人</string>
     <string name="edit_contact">编辑联系人</string>
     <string name="search_num">在线查询号码</string>
+
+    <string name="phone_state_wait">Waiting for the answer…</string>
+    <string name="phone_state_cancel">Cancel</string>
+    <string name="phone_state_answer">Answer</string>
+    <string name="phone_state_invite">Inviting you to answer the call…</string>
 </resources>

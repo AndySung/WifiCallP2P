@@ -135,7 +135,11 @@ public class MyMediaPocsThrd extends MediaPocsThrd
 
         Out:
         {
-            { Message p_MessagePt = new Message(); p_MessagePt.what = ConfigActivityHandler.Msg.MediaPocsThrdInit.ordinal(); m_MainActivityHandlerPt.sendMessage( p_MessagePt ); } //向主界面发送初始化媒体处理线程的消息。
+            {
+                Message p_MessagePt = new Message();
+                p_MessagePt.what = ConfigActivityHandler.Msg.MediaPocsThrdInit.ordinal();
+                m_MainActivityHandlerPt.sendMessage( p_MessagePt );
+            } //向主界面发送初始化媒体处理线程的消息。
 
             m_RqstCnctRslt = 0; //设置请求连接的结果为没有选择。
             m_IsRecvExitPkt = 0; //设置没有接收到退出包。
@@ -332,7 +336,9 @@ public class MyMediaPocsThrd extends MediaPocsThrd
                 {
                     String p_InfoStrPt = "设置本端TCP协议客户端套接字的Nagle延迟算法状态为禁用失败。原因：" + m_ErrInfoVstrPt.GetStr();
                     if( m_IsPrintLogcat != 0 ) Log.i( m_CurClsNameStrPt, p_InfoStrPt );
-                    Message p_MessagePt = new Message();p_MessagePt.what = ConfigActivityHandler.Msg.ShowLog.ordinal();p_MessagePt.obj = p_InfoStrPt;m_MainActivityHandlerPt.sendMessage( p_MessagePt );
+                    Message p_MessagePt = new Message();
+                    p_MessagePt.what = ConfigActivityHandler.Msg.ShowLog.ordinal();
+                    p_MessagePt.obj = p_InfoStrPt;m_MainActivityHandlerPt.sendMessage( p_MessagePt );
                     break Out;
                 }
 
@@ -340,7 +346,10 @@ public class MyMediaPocsThrd extends MediaPocsThrd
                 {
                     String p_InfoStrPt = "设置本端TCP协议客户端套接字的发送缓冲区大小失败。原因：" + m_ErrInfoVstrPt.GetStr();
                     if( m_IsPrintLogcat != 0 ) Log.e( m_CurClsNameStrPt, p_InfoStrPt );
-                    Message p_MessagePt = new Message();p_MessagePt.what = ConfigActivityHandler.Msg.ShowLog.ordinal();p_MessagePt.obj = p_InfoStrPt;m_MainActivityHandlerPt.sendMessage( p_MessagePt );
+                    Message p_MessagePt = new Message();
+                    p_MessagePt.what = ConfigActivityHandler.Msg.ShowLog.ordinal();
+                    p_MessagePt.obj = p_InfoStrPt;
+                    m_MainActivityHandlerPt.sendMessage( p_MessagePt );
                     break Out;
                 }
 
@@ -348,7 +357,10 @@ public class MyMediaPocsThrd extends MediaPocsThrd
                 {
                     String p_InfoStrPt = "设置本端TCP协议客户端套接字的接收缓冲区大小失败。原因：" + m_ErrInfoVstrPt.GetStr();
                     if( m_IsPrintLogcat != 0 ) Log.e( m_CurClsNameStrPt, p_InfoStrPt );
-                    Message p_MessagePt = new Message();p_MessagePt.what = ConfigActivityHandler.Msg.ShowLog.ordinal();p_MessagePt.obj = p_InfoStrPt;m_MainActivityHandlerPt.sendMessage( p_MessagePt );
+                    Message p_MessagePt = new Message();
+                    p_MessagePt.what = ConfigActivityHandler.Msg.ShowLog.ordinal();
+                    p_MessagePt.obj = p_InfoStrPt;
+                    m_MainActivityHandlerPt.sendMessage( p_MessagePt );
                     break Out;
                 }
 
@@ -356,7 +368,10 @@ public class MyMediaPocsThrd extends MediaPocsThrd
                 {
                     String p_InfoStrPt = "设置本端TCP协议客户端套接字的保活机制失败。原因：" + m_ErrInfoVstrPt.GetStr();
                     if( m_IsPrintLogcat != 0 ) Log.e( m_CurClsNameStrPt, p_InfoStrPt );
-                    Message p_MessagePt = new Message();p_MessagePt.what = ConfigActivityHandler.Msg.ShowLog.ordinal();p_MessagePt.obj = p_InfoStrPt;m_MainActivityHandlerPt.sendMessage( p_MessagePt );
+                    Message p_MessagePt = new Message();
+                    p_MessagePt.what = ConfigActivityHandler.Msg.ShowLog.ordinal();
+                    p_MessagePt.obj = p_InfoStrPt;
+                    m_MainActivityHandlerPt.sendMessage( p_MessagePt );
                     break Out;
                 }
             }
@@ -373,13 +388,18 @@ public class MyMediaPocsThrd extends MediaPocsThrd
                         {
                             String p_InfoStrPt = "获取本端高级UDP协议套接字绑定的本地节点地址和端口失败。原因：" + m_ErrInfoVstrPt.GetStr();
                             if( m_IsPrintLogcat != 0 ) Log.e( m_CurClsNameStrPt, p_InfoStrPt );
-                            Message p_MessagePt = new Message();p_MessagePt.what = ConfigActivityHandler.Msg.ShowLog.ordinal();p_MessagePt.obj = p_InfoStrPt;m_MainActivityHandlerPt.sendMessage( p_MessagePt );
+                            Message p_MessagePt = new Message();
+                            p_MessagePt.what = ConfigActivityHandler.Msg.ShowLog.ordinal();
+                            p_MessagePt.obj = p_InfoStrPt;m_MainActivityHandlerPt.sendMessage( p_MessagePt );
                             break Out;
                         }
 
                         String p_InfoStrPt = "初始化本端高级UDP协议套接字[" + p_LclNodeAddrPt.m_Val + ":" + p_LclNodePortPt.m_Val + "]成功。";
                         if( m_IsPrintLogcat != 0 ) Log.i( m_CurClsNameStrPt, p_InfoStrPt );
-                        Message p_MessagePt = new Message();p_MessagePt.what = ConfigActivityHandler.Msg.ShowLog.ordinal();p_MessagePt.obj = p_InfoStrPt;m_MainActivityHandlerPt.sendMessage( p_MessagePt );
+                        Message p_MessagePt = new Message();
+                        p_MessagePt.what = ConfigActivityHandler.Msg.ShowLog.ordinal();
+                        p_MessagePt.obj = p_InfoStrPt;
+                        m_MainActivityHandlerPt.sendMessage( p_MessagePt );
                     }
                     else //如果初始化本端高级UDP协议套接字失败。
                     {
@@ -554,7 +574,11 @@ public class MyMediaPocsThrd extends MediaPocsThrd
             //等待允许连接。
             if( ( m_NtwkPt.m_IsCreateSrvrOrClnt == 1 ) && ( m_IsAutoAllowCnct != 0 ) ) m_RqstCnctRslt = 1;
             else m_RqstCnctRslt = 0;
-            {Message p_MessagePt = new Message();p_MessagePt.what = ConfigActivityHandler.Msg.RqstCnctDlgInit.ordinal();p_MessagePt.obj = p_RmtNodeAddrPt.m_Val;m_MainActivityHandlerPt.sendMessage( p_MessagePt );} //向主界面发送显示请求连接对话框的消息。
+            {
+                Message p_MessagePt = new Message();
+                p_MessagePt.what = ConfigActivityHandler.Msg.RqstCnctDlgInit.ordinal();
+                p_MessagePt.obj = p_RmtNodeAddrPt.m_Val;
+                m_MainActivityHandlerPt.sendMessage( p_MessagePt );} //向主界面发送显示请求连接对话框的消息。
             WaitAllowCnct:
             while( true )
             {
@@ -1030,7 +1054,10 @@ public class MyMediaPocsThrd extends MediaPocsThrd
 
             String p_InfoStrPt = "中断通话。";
             if( m_IsPrintLogcat != 0 ) Log.i( m_CurClsNameStrPt, p_InfoStrPt );
-            Message p_MessagePt = new Message();p_MessagePt.what = ConfigActivityHandler.Msg.ShowLog.ordinal();p_MessagePt.obj = p_InfoStrPt;m_MainActivityHandlerPt.sendMessage( p_MessagePt );
+            Message p_MessagePt = new Message();
+            p_MessagePt.what = ConfigActivityHandler.Msg.ShowLog.ordinal();
+            p_MessagePt.obj = p_InfoStrPt;
+            m_MainActivityHandlerPt.sendMessage( p_MessagePt );
             if( m_IsShowToast != 0 ) m_ShowToastActivityPt.runOnUiThread( new Runnable() { public void run() { Toast.makeText( m_ShowToastActivityPt, p_InfoStrPt, Toast.LENGTH_LONG ).show(); } } );
         }
 
@@ -1042,7 +1069,10 @@ public class MyMediaPocsThrd extends MediaPocsThrd
 
             String p_InfoStrPt = "关闭并销毁本端TCP协议服务端套接字成功。";
             if( m_IsPrintLogcat != 0 ) Log.i( m_CurClsNameStrPt, p_InfoStrPt );
-            Message p_MessagePt = new Message();p_MessagePt.what = ConfigActivityHandler.Msg.ShowLog.ordinal();p_MessagePt.obj = p_InfoStrPt;m_MainActivityHandlerPt.sendMessage( p_MessagePt );
+            Message p_MessagePt = new Message();
+            p_MessagePt.what = ConfigActivityHandler.Msg.ShowLog.ordinal();
+            p_MessagePt.obj = p_InfoStrPt;
+            m_MainActivityHandlerPt.sendMessage( p_MessagePt );
         }
 
         //销毁本端TCP协议客户端套接字。

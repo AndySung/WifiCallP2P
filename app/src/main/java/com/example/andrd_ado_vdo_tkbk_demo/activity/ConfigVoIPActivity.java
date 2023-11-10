@@ -15,9 +15,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -65,6 +67,14 @@ public class ConfigVoIPActivity extends AppCompatActivity implements View.OnTouc
 
     public boolean isShowLog;
 
+    public RelativeLayout calling_view;     //打电话时显示的View
+    public RelativeLayout talking_view;     //对话时显示的View
+    public RelativeLayout ring_view;        //响铃时的View
+    public RelativeLayout tab_bar_view;     //tabbar_view
+    public ScrollView scrollview_layout;    //主界面的View
+
+    public ImageView hungup_call;
+
     //Activity创建消息。
     @Override protected void onCreate( Bundle savedInstanceState )
     {
@@ -104,6 +114,13 @@ public class ConfigVoIPActivity extends AppCompatActivity implements View.OnTouc
         LogLinearLyotId = findViewById(R.id.LogLinearLyotId);   //log信息
         LogLinear_title = findViewById(R.id.LogLinear_title);   //log标题和清空日志按钮
         show_log_btn = findViewById(R.id.show_log_btn);         //显示按钮
+        calling_view = findViewById(R.id.calling_view);         //打电话时的View
+        talking_view = findViewById(R.id.talking_view);         //对话时的View
+        ring_view = findViewById(R.id.ring_view);               //响铃时候的View
+        tab_bar_view = findViewById(R.id.toolbar);              //toolbar的view
+        scrollview_layout = findViewById(R.id.scrollview_layout);     //主界面的View
+        hungup_call = findViewById(R.id.calling_hangup);        //掛斷按鈕
+
         show_log_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -118,6 +135,17 @@ public class ConfigVoIPActivity extends AppCompatActivity implements View.OnTouc
                     show_log_btn.setText("显示日志");
                     isShowLog = true;
                 }
+            }
+        });
+        hungup_call.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                {Message p_MessagePt = new Message();p_MessagePt.what = ConfigActivityHandler.Msg.MediaPocsThrdDstoy.ordinal();m_MainActivityHandlerPt.sendMessage( p_MessagePt );} //向主界面发送销毁媒体处理线程的消息。
+//                {Message p_MessagePt = new Message();p_MessagePt.what = ConfigActivityHandler.Msg.Vibrate.ordinal();m_MainActivityHandlerPt.sendMessage( p_MessagePt );} //向主界面发送振动的消息。
+//                 {Message p_MessagePt = new Message();p_MessagePt.what = ConfigActivityHandler.Msg.PttBtnDstoy.ordinal();m_MainActivityHandlerPt.sendMessage( p_MessagePt );} //向主界面发送销毁
+                calling_view.setVisibility(View.GONE);
+                scrollview_layout.setVisibility(View.VISIBLE);
+                tab_bar_view.setVisibility(View.VISIBLE);
             }
         });
         //请求权限。
@@ -482,7 +510,7 @@ public class ConfigVoIPActivity extends AppCompatActivity implements View.OnTouc
                     }
 
                     //设置创建服务端或者客户端标记。
-                    m_MyMediaPocsThrdPt.m_NtwkPt.m_IsCreateSrvrOrClnt = ( ViewPt.getId() == R.id.CreateSrvrBtnId ) ? 1 : 0; //标记创建服务端接受客户端。
+                    m_MyMediaPocsThrdPt.m_NtwkPt.m_IsCreateSrvrOrClnt = ( ViewPt.getId() == R.id.CreateSrvrBtnId ) ? 1 : 0; //标记创建服务端接受客户端。1表示创建服务端，为0表示创建客户端。
 
                     //设置是否自动允许连接。
                     m_MyMediaPocsThrdPt.m_IsAutoAllowCnct = ( ( ( CheckBox ) m_XfrPrtclStngLyotViewPt.findViewById( R.id.IsAutoAllowCnctCkBoxId ) ).isChecked() ) ? 1 : 0;
