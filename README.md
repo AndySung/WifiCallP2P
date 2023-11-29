@@ -1,5 +1,67 @@
-# Android Tab Layout
+# WiFi通话说明文档
 
-### TabLayout provides a horizontal layout to display tabs.
 
-TabLayout provides a horizontal layout with tabs that can be swiped or tapped to switch between different views or fragments. It supports various customization options to control the appearance and behavior of the tabs, such as tab indicator style, text color, icons, and more.
+
+
+
+## 说明
+
+这个软件是用于测试WiFi 语音通话和视频通话的，支持 Speex声学回音消除、WebRtc定点版回音消除、WebRtc浮点版回音消除、SpeexWebRtc三重声学回音消除等。
+
+
+
+软件采用的传输协议为TCP 和 UDP，这两种协议自行切换。
+
+
+
+## 使用方法
+
+如果要测试这个软件，请使用两台设备进行测试，两台设备分别安装这个apk，一台做服务端，一个做客户端进行呼叫。
+
+
+
+## <font color='blue'>服务端</font>
+
+ <img src="http://pic.song0123.com/img/wificall_main.png" alt="wificall_main" style="zoom:50%;" />
+
+
+
+- 打开界面就是这样的，右上角是显示日志，可以查看设备是否创建成功等等信息；
+  - 把这台设备当做服务端，设置传输协议，设置ip地址和端口号，做服务端的时候 ip地址不需要你手动修改，读取的就是本设备的ip地址；
+  - 音频设置：可以使用语音通话，或者视频通话，或者语音和视频通话，语音输出设备选择等；
+  - 系统音频输出音量: 是服务端收到的音量大小；
+  - 更多设置：这里是设置一些音频采样频率和回音消除等功能。
+
+这里一切设置好之后点击创建服务端，这样我们的服务端就创建成功了，接下来就是等待设备连接，连接成功就可以通话了。
+
+
+
+
+
+
+
+## 更多设置
+
+ <img src="http://pic.song0123.com/img/more_setting03.png" alt="more_setting03" style="zoom:50%;" />
+
+ 
+
+更多设置中设置噪音消除等设置，设置完成后请点击确定按钮，不然设置无法生效。
+
+
+
+
+
+# <font color='blue'>客户端</font>
+
+在另一台设备上同样打开这个软件
+
+ <img src="http://pic.song0123.com/img/client.png" alt="client" style="zoom:50%;" />
+
+
+
+这里设置要和服务端一样
+
+- **传输协议要选择和服务端一样的协议**，服务端为TCP，客户端也必须设置为TCP协议；
+- **这里的 IP 地址就是要输入服务端的IP地址和端口号**了；
+- 设置成功后点击拨打电话按钮，即可通话了。
